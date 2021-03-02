@@ -1,0 +1,7 @@
+---
+- name: Allow port 3389 any protocol
+  ufw:
+    rule: allow
+    port: 3389
+    proto: any
+  become: true

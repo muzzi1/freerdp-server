@@ -2,3 +2,4 @@
 - hosts: uninet
   roles:
   - role: xrdp
+  - role: ufw-rdp
