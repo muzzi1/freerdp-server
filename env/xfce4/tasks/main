@@ -1,0 +1,15 @@
+---
+- name: Install xfce4
+  apt:
+    pkg:
+    - xfce4
+  become: true
+
+
+- name: Create xfce4-session .xsession
+  file:
+    src: .xsession
+    dest: '/home/{{ansible_user}}/.xsession'
+    owner: '{{ansible_user}}'
+    group: '{{ansible_user}}'
+    mode: '0755'

@@ -1,0 +1,10 @@
+---
+- name: Template
+  template:
+    src: xfce-startwm.sh.j2
+    dest: /etc/xrdp/startwm.sh
+    owner: root
+    group: root
+    mode: '0755'
+  notify: Restart xrdp
+  become: true

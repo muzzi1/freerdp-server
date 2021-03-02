@@ -11,10 +11,4 @@
     groups: ssl-cert
     append: yes
   become: true
-
-- name: Restart xrdp
-  systemd:
-    state: restarted
-    daemon_reload: yes
-    name: xrdp
-  become: true
+  notify: Restart xrdp
