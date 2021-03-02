@@ -4,3 +4,17 @@
     pkg:
     - xrdp
   become: true
+
+- name: Add xrdp user to group 'ssl-cert'
+  user:
+    name: xrdp
+    groups: ssl-cert
+    append: yes
+  become: true
+
+- name: Restart xrdp
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: xrdp
+  become: true
