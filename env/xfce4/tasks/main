@@ -5,10 +5,9 @@
     - xfce4
   become: true
 
-
-- name: Create xfce4-session .xsession
-  file:
-    src: .xsession
+- name: xfce4-session .xsession
+  template:
+    src: .xsession.j2
     dest: '/home/{{ansible_user}}/.xsession'
     owner: '{{ansible_user}}'
     group: '{{ansible_user}}'
