@@ -1,0 +1,4 @@
+---
+- hosts: uninet
+  roles:
+  - role: xrdp

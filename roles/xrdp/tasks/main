@@ -1,0 +1,6 @@
+---
+- name: Install a list of packages
+  apt:
+    pkg:
+    - xrdp
+  become: true
