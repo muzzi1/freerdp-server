@@ -1,1 +1,9 @@
 ---
+- name: Install Gnome-session
+  apt:
+    pkg:
+    - gnome-session
+    - gdm3
+  become: true
+# Then Logout of active session when you want to connect!
+# else: will get a Black Screen
