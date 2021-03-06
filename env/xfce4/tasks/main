@@ -12,3 +12,13 @@
     owner: '{{ansible_user}}'
     group: '{{ansible_user}}'
     mode: '0755'
+
+- name: Template /etc/xrdp/startwm.sh
+  template:
+    src: startwm.sh.j2
+    dest: /etc/xrdp/startwm.sh
+    owner: root
+    group: root
+    mode: '0755'
+  notify: Restart xrdp
+  become: true
